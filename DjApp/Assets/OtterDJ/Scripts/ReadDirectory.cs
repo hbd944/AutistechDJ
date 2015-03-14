@@ -21,6 +21,7 @@ public class ReadDirectory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		DirInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
+<<<<<<< HEAD
 		DirInfos = DirInfo.GetDirectories();
 		 
 		//SongFiles = DirInfo.GetFiles();
@@ -35,6 +36,10 @@ public class ReadDirectory : MonoBehaviour {
 				SongFiles.Add(file1.ToString());
 			}
 		}
+=======
+//		SongFiles = DirInfo.GetFiles();
+		//foreach File in 
+>>>>>>> 23335f103bb94969cf68e6b0acc418a68d08c1a3
 	}
 	
 	// Update is called once per frame
