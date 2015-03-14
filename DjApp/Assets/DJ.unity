@@ -101,7 +101,7 @@ GameObject:
   - 82: {fileID: 29243445}
   - 114: {fileID: 29243444}
   m_Layer: 5
-  m_Name: Button 7
+  m_Name: btn_R_sng
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,11 +278,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 915752589}
-  m_Father: {fileID: 476910728}
-  m_RootOrder: 8
+  m_Father: {fileID: 694025415}
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 107.199997, y: 70.3000031}
+  m_AnchoredPosition: {x: 402.200012, y: 72}
   m_SizeDelta: {x: 92.3000031, y: 78.4000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &64328959
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 5
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1483,7 +1483,7 @@ GameObject:
   - 82: {fileID: 228496363}
   - 114: {fileID: 228496362}
   m_Layer: 5
-  m_Name: Button 3
+  m_Name: btn_L_sng
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1500,11 +1500,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1551266436}
-  m_Father: {fileID: 476910728}
-  m_RootOrder: 4
+  m_Father: {fileID: 694025415}
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -109.900002, y: 72.0999985}
+  m_AnchoredPosition: {x: 185.099976, y: 72}
   m_SizeDelta: {x: 92.3000031, y: 78.4000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &228496362
@@ -1681,7 +1681,7 @@ GameObject:
   - 82: {fileID: 287507956}
   - 114: {fileID: 287507955}
   m_Layer: 5
-  m_Name: Button 6
+  m_Name: btn_R_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1698,8 +1698,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 64328960}
-  m_Father: {fileID: 476910728}
-  m_RootOrder: 7
+  m_Father: {fileID: 1585615869}
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 107.199997, y: -72}
@@ -1914,7 +1914,7 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 5
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -1960,14 +1960,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1585615869}
-  - {fileID: 988896226}
-  - {fileID: 957221220}
-  - {fileID: 689377256}
-  - {fileID: 228496361}
-  - {fileID: 1809062716}
-  - {fileID: 1301059045}
-  - {fileID: 287507954}
-  - {fileID: 29243449}
   m_Father: {fileID: 804596577}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -2043,7 +2035,7 @@ GameObject:
   - 82: {fileID: 689377258}
   - 114: {fileID: 689377257}
   m_Layer: 5
-  m_Name: Button 2
+  m_Name: btn_L_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2060,11 +2052,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1176145870}
-  m_Father: {fileID: 476910728}
-  m_RootOrder: 3
+  m_Father: {fileID: 1585615869}
+  m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -109.900002, y: -70.1999969}
+  m_AnchoredPosition: {x: -109.900002, y: -72}
   m_SizeDelta: {x: 92.3000031, y: 78.4000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &689377257
@@ -2253,9 +2245,13 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 988896226}
+  - {fileID: 228496361}
+  - {fileID: 1301059045}
+  - {fileID: 29243449}
   m_Father: {fileID: 1585615869}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -295, y: 0}
@@ -2496,7 +2492,7 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 5
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2527,7 +2523,7 @@ GameObject:
   - 82: {fileID: 957221222}
   - 114: {fileID: 957221221}
   m_Layer: 5
-  m_Name: Button 1
+  m_Name: btn_play_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2544,11 +2540,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 313314134}
-  m_Father: {fileID: 476910728}
-  m_RootOrder: 2
+  m_Father: {fileID: 1585615869}
+  m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -295.399994, y: -69.3000031}
+  m_AnchoredPosition: {x: -295.399994, y: -72}
   m_SizeDelta: {x: 92.3000031, y: 78.4000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &957221221
@@ -2725,7 +2721,7 @@ GameObject:
   - 82: {fileID: 988896231}
   - 114: {fileID: 988896230}
   m_Layer: 5
-  m_Name: Button
+  m_Name: btn_play_sng
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2742,11 +2738,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1288193379}
-  m_Father: {fileID: 476910728}
-  m_RootOrder: 1
+  m_Father: {fileID: 694025415}
+  m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -295.399994, y: 73}
+  m_AnchoredPosition: {x: -.399963379, y: 72}
   m_SizeDelta: {x: 92.3000031, y: 78.4000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &988896227
@@ -2958,7 +2954,7 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 5
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3024,7 +3020,7 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 5
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3055,7 +3051,7 @@ GameObject:
   - 82: {fileID: 1301059047}
   - 114: {fileID: 1301059046}
   m_Layer: 5
-  m_Name: Button 5
+  m_Name: btn_main_sng
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3072,11 +3068,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1338862602}
-  m_Father: {fileID: 476910728}
-  m_RootOrder: 6
+  m_Father: {fileID: 694025415}
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.899999976, y: 69.4000015}
+  m_AnchoredPosition: {x: 294.099976, y: 72}
   m_SizeDelta: {x: 92.3000031, y: 78.4000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1301059046
@@ -3288,7 +3284,7 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 5
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3354,7 +3350,7 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 5
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3398,6 +3394,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 957221220}
+  - {fileID: 689377256}
+  - {fileID: 1809062716}
+  - {fileID: 287507954}
   - {fileID: 694025415}
   m_Father: {fileID: 476910728}
   m_RootOrder: 0
@@ -3482,7 +3482,7 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 5
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -3513,7 +3513,7 @@ GameObject:
   - 82: {fileID: 1809062718}
   - 114: {fileID: 1809062717}
   m_Layer: 5
-  m_Name: Button 4
+  m_Name: btn_main_fx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3530,11 +3530,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1649514302}
-  m_Father: {fileID: 476910728}
-  m_RootOrder: 5
+  m_Father: {fileID: 1585615869}
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.899999976, y: -72.9000015}
+  m_AnchoredPosition: {x: -.899999976, y: -72}
   m_SizeDelta: {x: 92.3000031, y: 78.4000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1809062717
