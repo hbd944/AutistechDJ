@@ -20,8 +20,7 @@ public class ReadDirectory : MonoBehaviour {
 	public GameObject textObject;
 	// Use this for initialization
 	void Start () {
-		DirInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
-<<<<<<< HEAD
+		DirInfo = new DirectoryInfo(Application.persistentDataPath);
 		DirInfos = DirInfo.GetDirectories();
 		 
 		//SongFiles = DirInfo.GetFiles();
@@ -29,17 +28,13 @@ public class ReadDirectory : MonoBehaviour {
 
 
 		FlInfo = DirInfo.GetFiles();
-		textObject.GetComponent<Text> ().text = Directory.GetCurrentDirectory().ToString();
+		textObject.GetComponent<Text> ().text = Application.persistentDataPath.ToString();
 		if(FlInfo != null)
 		{
 			foreach(FileInfo file1 in FlInfo) {
 				SongFiles.Add(file1.ToString());
 			}
 		}
-=======
-//		SongFiles = DirInfo.GetFiles();
-		//foreach File in 
->>>>>>> 23335f103bb94969cf68e6b0acc418a68d08c1a3
 	}
 	
 	// Update is called once per frame
