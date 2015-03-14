@@ -6,4 +6,4 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/DJ.unity
+    path: Assets/OtterDJ/Scenes/DJ.unity
