@@ -31,3 +31,5 @@ Icon?
 ehthumbs.db
 [Tt]humbs.db
 *.apk
+*.csproj
+*.sln
