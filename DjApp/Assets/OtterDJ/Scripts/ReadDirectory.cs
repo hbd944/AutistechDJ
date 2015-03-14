@@ -20,7 +20,7 @@ public class ReadDirectory : MonoBehaviour {
 	public GameObject textObject;
 	// Use this for initialization
 	void Start () {
-		DirInfo = new DirectoryInfo(Application.persistentDataPath);
+		DirInfo = new DirectoryInfo(Application.dataPath);
 		DirInfos = DirInfo.GetDirectories();
 		 
 		//SongFiles = DirInfo.GetFiles();
@@ -28,7 +28,7 @@ public class ReadDirectory : MonoBehaviour {
 
 
 		FlInfo = DirInfo.GetFiles();
-		textObject.GetComponent<Text> ().text = Application.persistentDataPath.ToString();
+		textObject.GetComponent<Text> ().text = Application.dataPath;
 		if(FlInfo != null)
 		{
 			foreach(FileInfo file1 in FlInfo) {
