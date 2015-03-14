@@ -16,8 +16,8 @@ public class ReadDirectory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		DirInfo = new DirectoryInfo(Directory.GetCurrentDirectory());
-		SongFiles = DirInfo.GetFiles();
-		foreach File in 
+//		SongFiles = DirInfo.GetFiles();
+		//foreach File in 
 	}
 	
 	// Update is called once per frame
