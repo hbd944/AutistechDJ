@@ -2367,7 +2367,8 @@ AudioSource:
   m_GameObject: {fileID: 753014219}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 5608172f7ef0aaa42ade13cba175f92b,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2464,7 +2465,8 @@ AudioSource:
   m_GameObject: {fileID: 792072929}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: d1e17a6e90822cf449bbf94b87632c18,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2628,16 +2630,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songIndex: 0
+  b1: {fileID: 228496364}
+  b2: {fileID: 0}
+  b3: {fileID: 0}
+  b4: {fileID: 0}
+  b5: {fileID: 0}
+  image: {fileID: 0}
   clip: {fileID: 8300000, guid: 4d7957dc43bbecc4d9281ec4baad1bc9, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 2800000, guid: 5d2cc3d4d8589d741898cbd1814ee498, type: 3}
   clip2: {fileID: 0}
-  icon2: {fileID: 0}
+  icon2: {fileID: 2800000, guid: a07dcdae2220ccf4d855a65854aa9907, type: 3}
   clip3: {fileID: 0}
-  icon3: {fileID: 0}
+  icon3: {fileID: 2800000, guid: b83ae56cc9f0cc440b7b5450470d492d, type: 3}
   clip4: {fileID: 0}
-  icon4: {fileID: 0}
+  icon4: {fileID: 2800000, guid: 626783e4a6a207c43b6037ea0efcfdb1, type: 3}
   clip5: {fileID: 0}
-  icon5: {fileID: 0}
+  icon5: {fileID: 2800000, guid: 8e32292d44317834c85216ffc27fd5fd, type: 3}
   audio1: {fileID: 792072931}
   audio2: {fileID: 753014221}
   audio3: {fileID: 148579428}

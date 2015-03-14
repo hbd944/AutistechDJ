@@ -378,6 +378,7 @@ GameObject:
   - 92: {fileID: 1083870030}
   - 124: {fileID: 1083870029}
   - 81: {fileID: 1083870028}
+  - 114: {fileID: 1083870033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -450,6 +451,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &1083870033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1083870027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4aee483e1b8854cb016c0bafa55cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songIndex: 0
+  b1: {fileID: 326455806}
+  b2: {fileID: 1483068988}
+  b3: {fileID: 78169691}
+  b4: {fileID: 1445179151}
+  b5: {fileID: 1278331942}
+  image: {fileID: 78169692}
+  clip: {fileID: 8300000, guid: 4d7957dc43bbecc4d9281ec4baad1bc9, type: 3}
+  icon: {fileID: 21300000, guid: 5d2cc3d4d8589d741898cbd1814ee498, type: 3}
+  clip2: {fileID: 0}
+  icon2: {fileID: 21300000, guid: b83ae56cc9f0cc440b7b5450470d492d, type: 3}
+  clip3: {fileID: 0}
+  icon3: {fileID: 21300000, guid: a07dcdae2220ccf4d855a65854aa9907, type: 3}
+  clip4: {fileID: 0}
+  icon4: {fileID: 21300000, guid: 626783e4a6a207c43b6037ea0efcfdb1, type: 3}
+  clip5: {fileID: 0}
+  icon5: {fileID: 21300000, guid: 8e32292d44317834c85216ffc27fd5fd, type: 3}
+  audio1: {fileID: 0}
+  audio2: {fileID: 0}
+  audio3: {fileID: 0}
+  audio4: {fileID: 0}
 --- !u!1 &1278331940
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +556,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1278331943}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1278331943}
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 626783e4a6a207c43b6037ea0efcfdb1,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1278331943
@@ -743,13 +789,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 78169692}
-        m_MethodName: set_sprite
-        m_Mode: 2
+      - m_Target: {fileID: 1083870033}
+        m_MethodName: RotateSongLeft
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: a07dcdae2220ccf4d855a65854aa9907,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine, Version=0.0.0.0,
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
