@@ -19,6 +19,15 @@ sysinfo.txt
 /*.user
 /*.unityproj
 /*.booproj
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln*
+*.user
+*.unityproj
+*.booproj
+*.apk
  
 # ============ #
 # OS generated #
@@ -30,6 +39,4 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 [Tt]humbs.db
-*.apk
-*.csproj
-*.sln
+
