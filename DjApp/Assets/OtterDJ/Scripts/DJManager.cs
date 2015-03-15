@@ -100,7 +100,7 @@ public class DJManager : MonoBehaviour
 	}
 
 
-	public void MoveMeLeft(int id, bool top)
+	public void MoveMeLeft(int id)
 	{
 
 		if (id == 0) {
