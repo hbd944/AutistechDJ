@@ -25,6 +25,9 @@ public class DJManager : MonoBehaviour
 
 	public GameObject[] buttons;
 
+	public RectTransform farRight;
+	public RectTransform farLeft;
+
 
 	public void PlaySong(AudioClip s)
 	{
@@ -162,6 +165,29 @@ public class DJManager : MonoBehaviour
 		slot3.GetComponent<Image> ().sprite = songs [songIndex].icon;
 	}
 
+	public void MoveMeLeft(int id)
+	{
+		if(id == 0)
+		{
+			farRight = buttons[6].GetComponent<RectTransform>();
+		}
+		else
+		{
+			farRight = buttons[id-1].GetComponent<RectTransform>();
+		}
+	}
+	public void MoveMeRight(int id)
+	{
+		if(id == 6)
+		{
+			farLeft = buttons[0].GetComponent<RectTransform>();
+		}
+		else
+		{
+			farLeft = buttons[id+1].GetComponent<RectTransform>();
+		}
+	}
+
 	void Start () 
 	{
 		Sprite[] sprs = Resources.LoadAll<Sprite>("Carousel");
@@ -170,10 +196,12 @@ public class DJManager : MonoBehaviour
 			s.icon = spr;
 			songs.Add(s);
 		}
-
 		songIndex = 2;
 
-
+		for(int i = 0; i < buttons.Length; i++)
+		{
+			buttons[i].GetComponent<TouchManager>().id = i;
+		}
 	}
 	
 
