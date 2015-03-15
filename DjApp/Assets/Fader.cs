@@ -29,9 +29,15 @@ public class Fader : MonoBehaviour
 	public void Test()
 	{
 		if(!state)
+		{
 			SwitchTracks(source1,source2);
+			state = !state;
+		}
 		else
+		{
 			SwitchTracks(source2,source1);
+			state = !state;
+		}
 		
 	}
 
@@ -40,13 +46,17 @@ public class Fader : MonoBehaviour
 		if(fading)
 		{
 			fadeFrom.volume-=0.1f * Time.deltaTime *fadeSpeed;
-			fadeTo.volume+=0.1f * Time.deltaTime *fadeSpeed;
+
+			if(fadeTo.isPlaying)
+				fadeTo.volume+=0.1f * Time.deltaTime *fadeSpeed;
 
 			if(fadeFrom.volume < 0.5f && !fadeTo.isPlaying)
 				fadeTo.Play();
 
 			if(fadeFrom.volume < 0)
+			{
 				fadeFrom.volume = 0;
+			}
 
 			if(fadeTo.volume > 1.0f)
 				fadeTo.volume = 1.0f;
@@ -67,6 +77,7 @@ public class Fader : MonoBehaviour
 		fadeFrom = s1;
 		fadeTo = s2;
 		s2.volume = 0.0f;
+
 
 		fading = true;
 

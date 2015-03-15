@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OtterDJ\Scripts\ReadDirectory.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Fader.cs">
     <Files>
-      <File FileName="Assets\OtterDJ\Scripts\ReadDirectory.cs" Line="31" Column="63" />
+      <File FileName="Assets\Fader.cs" Line="55" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
