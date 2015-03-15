@@ -40,19 +40,19 @@ public class DJManager : MonoBehaviour
 		{
 			go.GetComponent<RectTransform>().Translate (new Vector3(sw*3,0,0));
 
-			if(go.GetComponent<RectTransform>().localPosition.x > 485)
+			if(go.GetComponent<RectTransform>().localPosition.x+150 > 485)
 			{
 				if(go.GetComponent<RectTransform>().localPosition.x > farRight)
 				{
-					farRight = go.GetComponent<RectTransform>().localPosition.x;
+					farRight = go.GetComponent<RectTransform>().localPosition.x+150;
 				}
 
 			}
-			if(go.GetComponent<RectTransform>().localPosition.x < -480)
+			if(go.GetComponent<RectTransform>().localPosition.x+150 < -480)
 			{
 				if(farRight > 485)
 				{
-					go.GetComponent<RectTransform>().localPosition = new Vector3(farRight+200,go.GetComponent<RectTransform>().localPosition.y,go.GetComponent<RectTransform>().localPosition.z);
+					go.GetComponent<RectTransform>().localPosition = new Vector3(farRight,go.GetComponent<RectTransform>().localPosition.y,go.GetComponent<RectTransform>().localPosition.z);
 			
 				
 				}
