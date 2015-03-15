@@ -209,7 +209,7 @@ public class AudioProcessor : MonoBehaviour
             // if current value is largest in the array, probably means we're on a beat
             if (smaxix == now)
             {
-                //tapTempo();
+                tapTempo();
                 // make sure the most recent beat wasn't too recently
                 if (sinceLast > tempopd / 4)
                 {
@@ -273,7 +273,7 @@ public class AudioProcessor : MonoBehaviour
     public float[] computeAverages(float[] data)
     {
         float[] averages = new float[12];
-        for (int i = 0; i < 12; i++)
+        for (int i = 2; i < 6; i++)
         {
             float avg = 0;
             int lowFreq;
