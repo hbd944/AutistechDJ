@@ -14,6 +14,25 @@ public class DJManager : MonoBehaviour
 	public RectTransform farRight;
 	public RectTransform farLeft;
 
+	public void orderRender(){
+		GameObject center = buttons [0];
+
+		foreach(GameObject thisButton in buttons){
+			if (Mathf.Abs (thisButton.GetComponent<RectTransform>().localPosition.x) < Mathf.Abs (center.GetComponent<RectTransform>().localPosition.x))
+			{
+				center = thisButton;
+			}
+		}
+		int myIndex = center.GetComponent<TouchManager>().id;
+
+	}
+
+	public GameObject getLeftChild(GameObject me){
+		///!!!!
+	}
+
+
+
 	public void MoveMeLeft(int id)
 	{
 		if(id == 0)
