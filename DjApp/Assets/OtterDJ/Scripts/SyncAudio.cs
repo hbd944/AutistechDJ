@@ -5,7 +5,8 @@ public class SyncAudio : MonoBehaviour , AudioProcessor.AudioCallbacks
 {
 	public GameObject deck;
 	AudioProcessor processor;
-	public ParticleVisualizer visualizer;
+	public ParticleVisualizer visualizer1;
+	public ParticleVisualizer visualizer2;
 	float prevTime;
 	private int beatCounter = 0;
 	private bool findingBeat;
@@ -25,7 +26,8 @@ public class SyncAudio : MonoBehaviour , AudioProcessor.AudioCallbacks
 		Debug.Log("Beat!!!");
 		Debug.Log(Time.time - prevTime);
 		prevTime = Time.time;
-		visualizer.VisualizeOnBeat ();
+		visualizer1.VisualizeOnBeat ();
+		visualizer2.VisualizeOnBeat ();
 		if (beatCounter != 0) {
 			beatCounter--;
 		} else if (findingBeat) {
