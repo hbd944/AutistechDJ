@@ -1578,6 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5748ef49aadbbd04abf42413abe52555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rate: 5000
 --- !u!1 &228496360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,8 +2733,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4aee483e1b8854cb016c0bafa55cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songs: []
+  songIndex: 0
+  b1: {fileID: 0}
+  b2: {fileID: 0}
+  b3: {fileID: 0}
+  b4: {fileID: 0}
+  b5: {fileID: 0}
+  image: {fileID: 0}
   clip: {fileID: 8300000, guid: 4d7957dc43bbecc4d9281ec4baad1bc9, type: 3}
+  icon: {fileID: 0}
+  clip2: {fileID: 0}
+  icon2: {fileID: 0}
+  clip3: {fileID: 0}
+  icon3: {fileID: 0}
+  clip4: {fileID: 0}
+  icon4: {fileID: 0}
+  clip5: {fileID: 0}
+  icon5: {fileID: 0}
   audio1: {fileID: 792072931}
   audio2: {fileID: 753014221}
   audio3: {fileID: 148579428}
@@ -2941,6 +2957,8 @@ MonoBehaviour:
   SongFiles: []
   CurrFile: 
   CurrDir: 
+  currNum: 0
+  textObject: {fileID: 0}
 --- !u!114 &957221223
 MonoBehaviour:
   m_ObjectHideFlags: 0

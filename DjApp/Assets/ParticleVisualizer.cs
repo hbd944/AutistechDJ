@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ParticleVisualizer : MonoBehaviour {
 	ParticleSystem particles;
+	public int rate;
 	// Use this for initialization
 	void Start () {
 		particles = GetComponent<ParticleSystem>();
@@ -16,6 +17,6 @@ public class ParticleVisualizer : MonoBehaviour {
 	}
 	public void VisualizeOnBeat()
 	{
-		particles.emissionRate += 1000;
+		particles.emissionRate += rate;
 	}
 }
