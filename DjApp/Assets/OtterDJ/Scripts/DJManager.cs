@@ -100,15 +100,13 @@ public class DJManager : MonoBehaviour
 	}
 
 
-	public void MoveMeLeft(int id)
+	public void MoveMeLeft(int id, bool top)
 	{
-		if(id == 0)
-		{
-			farRight = buttons[6].GetComponent<RectTransform>();
-		}
-		else
-		{
-			farRight = buttons[id-1].GetComponent<RectTransform>();
+
+		if (id == 0) {
+			farRight = buttons [6].GetComponent<RectTransform> ();
+		} else {
+			farRight = buttons [id - 1].GetComponent<RectTransform> ();
 		}
 
 		//orderRender ();
@@ -132,7 +130,7 @@ public class DJManager : MonoBehaviour
 		//GetComponent<AudioSource>().clip = aC;
 		//GetComponent<AudioSource>().Play ();
 
-		fader.cueSong (aC);
+		transform.parent.GetComponent<Fader>().cueSong (aC);
 	}
 
 	void Start () 
