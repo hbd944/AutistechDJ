@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine.UI;
 using System;
+using UnityEngine.Audio;
+using UnityEngine;
 
 public class ReadDirectory : MonoBehaviour {
 
@@ -14,10 +16,14 @@ public class ReadDirectory : MonoBehaviour {
 	public DirectoryInfo DirInfo;
 	public DirectoryInfo[] DirInfos;
 	public FileInfo[] FlInfo;
+
 	//public FileInfo file1;
 	public int currNum = 0;
 
 	public GameObject textObject;
+	public WWW songToPlay;
+	public AudioSource sourcerino;
+
 	// Use this for initialization
 	void Start () {
 		DirInfo = new DirectoryInfo("mnt/sdcard/media");
@@ -56,15 +62,46 @@ public class ReadDirectory : MonoBehaviour {
 			textObject.GetComponent<Text> ().text = DirInfos [currNum].Name;
 			currNum++;
 		}*/
+
+		textObject.GetComponent<Text> ().text = SongFiles [currNum];
+		songToPlay = new WWW("https://www.youtube.com/watch?v=gcejLp72iCE");
+		sourcerino.clip = songToPlay.GetAudioClip(false, true, AudioType.MPEG);
+		//sourcerino.GetComponent<AudioClip>().LoadAudioData(true);
+		textObject.GetComponent<Text> ().text = sourcerino.volume.ToString();
+		sourcerino.Play();
+		if(!sourcerino.isPlaying)
+			textObject.GetComponent<Text> ().text = sourcerino.clip.length.ToString();
 			
 		 // Use this to iterate through all files in list
 		if (currNum < SongFiles.Count) {
-			textObject.GetComponent<Text> ().text = SongFiles [currNum];
-			currNum++;
+			/*textObject.GetComponent<Text> ().text = SongFiles [currNum];
+			if(!sourcerino.isPlaying)
+			{
+				songToPlay = new WWW("file:///" + SongFiles[currNum]);
+				sourcerino.clip = songToPlay.GetAudioClip(false, false);
+				sourcerino.Play();
+			}else {
+				sourcerino.Stop();
+				songToPlay = new WWW("file:///" + SongFiles[currNum]);
+				sourcerino.clip = songToPlay.GetAudioClip(false, false);
+				sourcerino.Play ();
+			}
+			currNum++;*/
 		} else {
-			currNum = 0;
+			/*currNum = 0;
 			textObject.GetComponent<Text> ().text = SongFiles [currNum];
-			currNum++;
+			if(!sourcerino.isPlaying)
+			{
+				songToPlay = new WWW("file:///" + SongFiles[currNum]);
+				sourcerino.clip = songToPlay.GetAudioClip(false, false);
+				sourcerino.Play();
+			}else {
+				sourcerino.Stop();
+				songToPlay = new WWW("file:///" + SongFiles[currNum]);
+				sourcerino.clip = songToPlay.GetAudioClip(false, false);
+				sourcerino.Play ();
+			}
+			currNum++;*/
 		}
 	}
 }
