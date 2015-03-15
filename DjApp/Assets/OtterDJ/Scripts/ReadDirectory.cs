@@ -20,7 +20,11 @@ public class ReadDirectory : MonoBehaviour {
 	public GameObject textObject;
 	// Use this for initialization
 	void Start () {
-		DirInfo = new DirectoryInfo(Application.dataPath);
+		DirInfo = new DirectoryInfo("mnt/sdcard/media");
+		//DirInfo.MoveTo ("");
+		//DirInfo.MoveTo("mnt"); 
+		//DirInfo.MoveTo("sdcard");
+		//DirInfo.MoveTo("media");
 		DirInfos = DirInfo.GetDirectories();
 		 
 		//SongFiles = DirInfo.GetFiles();

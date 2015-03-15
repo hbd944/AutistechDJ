@@ -129,7 +129,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Directory.GetCurrentDirectory()Directory.GetCurrentDirectory()
+  m_Text: what a piece of shit
 --- !u!222 &14533164
 CanvasRenderer:
   m_ObjectHideFlags: 0
