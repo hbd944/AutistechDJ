@@ -40,7 +40,21 @@ public class TouchManager : MonoBehaviour
 				
 				
 			}
+
+			if(frame.localPosition.x < -450)
+			{
+				frame.localPosition = new Vector3(450,frame.localPosition.y,0);
+				frame.eulerAngles = new Vector3(0, 50, 0);
+			}
+			else
+			if(frame.localPosition.x > 450)
+			{
+				frame.localPosition = new Vector3(-450,frame.localPosition.y,0);
+				frame.eulerAngles = new Vector3(0, -50, 0);
+			}
 			frame.localPosition = new Vector3(frame.localPosition.x,frame.localPosition.y,0);
+
+
 			
 			if(frame.localScale.magnitude < 1)
 			{
