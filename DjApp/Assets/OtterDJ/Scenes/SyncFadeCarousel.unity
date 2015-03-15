@@ -761,7 +761,14 @@ MonoBehaviour:
   fader: {fileID: 0}
   clips: []
   songIndex: 0
-  buttons: []
+  buttons:
+  - {fileID: 94316778}
+  - {fileID: 1338778845}
+  - {fileID: 284581580}
+  - {fileID: 1459525567}
+  - {fileID: 1695646758}
+  - {fileID: 621453077}
+  - {fileID: 727391120}
   farRight: {fileID: 0}
   farLeft: {fileID: 0}
 --- !u!1 &217756680
@@ -6297,7 +6304,14 @@ MonoBehaviour:
   fader: {fileID: 0}
   clips: []
   songIndex: 0
-  buttons: []
+  buttons:
+  - {fileID: 1511832983}
+  - {fileID: 1316388001}
+  - {fileID: 868380764}
+  - {fileID: 149857519}
+  - {fileID: 118654259}
+  - {fileID: 2063360516}
+  - {fileID: 805628294}
   farRight: {fileID: 0}
   farLeft: {fileID: 0}
 --- !u!1 &1767154897
