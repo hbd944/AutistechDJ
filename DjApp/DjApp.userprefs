@@ -1,12 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OtterDJ\Scripts\TouchManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OtterDJ\Scripts\AudioProcessor.cs">
     <Files>
-      <File FileName="Assets\OtterDJ\Scripts\DJManager.cs" Line="147" Column="23" />
+      <File FileName="Assets\songList.cs" Line="13" Column="55" />
+      <File FileName="Assets\OtterDJ\Scripts\SyncAudio.cs" Line="1" Column="1" />
+      <File FileName="Assets\rotate.cs" Line="1" Column="1" />
       <File FileName="Assets\OtterDJ\Scripts\AudioProcessor.cs" Line="81" Column="1" />
-      <File FileName="Assets\OtterDJ\Scripts\ReadDirectory.cs" Line="1" Column="1" />
-      <File FileName="Assets\OtterDJ\Scripts\Rotate.cs" Line="1" Column="1" />
-      <File FileName="Assets\OtterDJ\Scripts\TouchManager.cs" Line="41" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

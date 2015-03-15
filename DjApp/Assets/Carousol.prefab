@@ -121,15 +121,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 459726}
-  - 20: {fileID: 2081122}
-  - 92: {fileID: 9274306}
-  - 124: {fileID: 12483640}
-  - 81: {fileID: 8135202}
+  - 20: {fileID: 2060320}
   - 114: {fileID: 11468402}
   - 82: {fileID: 8200328}
+  - 20: {fileID: 2041798}
   m_Layer: 0
   m_Name: Carousol
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,13 +177,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -400}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -117, y: 22, z: -84}
+  m_LocalScale: {x: 1.09242642, y: 1.09242654, z: 1.09242654}
   m_Children:
   - {fileID: 22428728}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!20 &2081122
+--- !u!20 &2041798
 Camera:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -206,7 +204,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -217,13 +215,38 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
---- !u!81 &8135202
-AudioListener:
+--- !u!20 &2060320
+Camera:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153398}
   m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
 --- !u!82 &8200328
 AudioSource:
   m_ObjectHideFlags: 1
@@ -293,13 +316,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!92 &9274306
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153398}
-  m_Enabled: 1
 --- !u!114 &11405858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -734,12 +750,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4aee483e1b8854cb016c0bafa55cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fader: {fileID: 0}
   clips:
-  - {fileID: 8300000, guid: dcb277f0bd02d534780104c2a0ae6328, type: 3}
-  - {fileID: 8300000, guid: 592b2d1df6e495445a49f10328cd7d8c, type: 3}
-  - {fileID: 8300000, guid: 67f61429996291e49916ece0e5edfb3c, type: 3}
-  - {fileID: 8300000, guid: 55c6300f3a65a3f45853701c190467a4, type: 3}
-  - {fileID: 8300000, guid: ac44b7b176acfc54eb54ef6f9405484b, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   songIndex: 0
   buttons:
   - {fileID: 168200}
@@ -1026,13 +1043,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!124 &12483640
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 153398}
-  m_Enabled: 1
 --- !u!222 &22205836
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1083,7 +1093,7 @@ Canvas:
   m_GameObject: {fileID: 114528}
   m_Enabled: 1
   serializedVersion: 2
-  m_RenderMode: 2
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1150,8 +1160,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 114528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 400}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 22411654}
   - {fileID: 22403740}
@@ -1165,8 +1175,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 449.792511}
-  m_Pivot: {x: .5, y: .5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!224 &22441512
 RectTransform:
   m_ObjectHideFlags: 1

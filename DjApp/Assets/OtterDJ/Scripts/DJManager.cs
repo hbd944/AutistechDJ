@@ -146,9 +146,9 @@ public class DJManager : MonoBehaviour
 			songs.Add(s);
 		}
 
-		for(int i = 0; i < 5; i++)
+		for(int i = 0; i < 7; i++)
 		{
-			songs[i].song = clips[i];
+		//	songs[i].song = clips[i];
 		}
 
 		//for(int i = 0; i < songs.Count; i++)
@@ -161,8 +161,8 @@ public class DJManager : MonoBehaviour
 		{
 			buttons[i].GetComponent<TouchManager>().id = i;
 
-			if(i < 6)
-				buttons[i].GetComponent<TouchManager>().clip = songs[i].song;
+			//if(i < 6)
+				//buttons[i].GetComponent<TouchManager>().clip = songs[i].song;
 		}
 
 		//orderRender();

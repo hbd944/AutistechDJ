@@ -76,7 +76,7 @@ public class TouchManager : MonoBehaviour
 
 				//}
 				//else
-				frame.localPosition = new Vector3(dj.farRight.localPosition.x+100,0,0);
+				frame.localPosition = new Vector3(dj.farRight.localPosition.x+100,frame.localPosition.y,0);
 				frame.eulerAngles = new Vector3(0, 50, 0);
 
 
@@ -93,7 +93,7 @@ public class TouchManager : MonoBehaviour
 					
 				//}
 				//else
-				frame.localPosition = new Vector3(dj.farLeft.localPosition.x-100,0,0);
+				frame.localPosition = new Vector3(dj.farLeft.localPosition.x-100,frame.localPosition.y,0);
 				frame.eulerAngles = new Vector3(0, -50, 0);
 
 				dj.farLeft = frame;
