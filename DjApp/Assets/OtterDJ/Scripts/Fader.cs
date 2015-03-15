@@ -17,11 +17,11 @@ public class Fader : MonoBehaviour
 	private AudioSource fadeFrom;
 	private AudioSource fadeTo;
 
-	private bool firstPlay;
+	private bool firstPlay = true;
 
 	bool fading;
 
-	bool state;
+	bool state = false;
 
 	public float fadeSpeed;
 
@@ -34,6 +34,25 @@ public class Fader : MonoBehaviour
 		deck2 = temp [1];
 	}
 
+	public void cueSong(AudioClip song)
+	{
+		if (!state) 
+		{
+			source2.clip = song;
+		}
+		else
+		{
+			source1.clip = song;
+		}
+
+		if (!firstPlay) {
+			Test ();
+		} else {
+			firstPlay=false;
+			source1.clip = song;
+			source1.Play();
+		}
+	}
 
 	public void Test()
 	{
