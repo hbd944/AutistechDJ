@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class Fader : MonoBehaviour 
+public class Fader : MonoBehaviour
 {
 	public AudioClip clip1;
 	public AudioClip clip2;
@@ -10,8 +10,14 @@ public class Fader : MonoBehaviour
 	public AudioSource source1;
 	public AudioSource source2;
 
-	public AudioSource fadeFrom;
-	public AudioSource fadeTo;
+	SyncAudio deck1;
+	SyncAudio deck2;
+	AudioProcessor processor;
+
+	private AudioSource fadeFrom;
+	private AudioSource fadeTo;
+
+	private bool firstPlay;
 
 	bool fading;
 
@@ -21,28 +27,47 @@ public class Fader : MonoBehaviour
 
 	public ParticleSystem pSystem;
 
-	void Start () 
+	void Start()
 	{
-		state = false;
+		SyncAudio[] temp = GetComponents<SyncAudio> ();
+		deck1 = temp [0];
+		deck2 = temp [1];
 	}
+
 
 	public void Test()
 	{
-		if(!state)
+		if ((!source1.isPlaying)&&(!source2.isPlaying))
 		{
-			SwitchTracks(source1,source2);
-			state = !state;
+			source1.Play();
 		}
-		else
+		else 
 		{
-			SwitchTracks(source2,source1);
-			state = !state;
+			if (!state) {
+				findFirstBeat (deck2);
+				state = !state;
+			} else {
+				findFirstBeat (deck1);
+				state = !state;
+			}
 		}
 		
 	}
 
 	void Update () 
 	{
+
+		if (deck2.ready) {
+			deck2.ready=false;
+			SwitchTracks(source1,source2);
+
+
+		} else if (deck1.ready) {
+			deck1.ready=false;
+			SwitchTracks(source2,source1);
+
+		}
+
 		if(fading)
 		{
 			fadeFrom.volume-=0.1f * Time.deltaTime *fadeSpeed;
@@ -51,7 +76,7 @@ public class Fader : MonoBehaviour
 				fadeTo.volume+=0.1f * Time.deltaTime *fadeSpeed;
 
 			if(fadeFrom.volume < 0.5f && !fadeTo.isPlaying)
-				fadeTo.Play();
+				fadeTo.UnPause();
 
 			if(fadeFrom.volume < 0)
 			{
@@ -65,7 +90,7 @@ public class Fader : MonoBehaviour
 			if(fadeTo.volume == 1.0f)
 			{
 				fadeFrom.volume = 0.0f;
-				fadeFrom.Stop();
+				//fadeFrom.Stop();
 				fading = false;
 				pSystem.gravityModifier = 0.0f;
 			}
@@ -85,5 +110,10 @@ public class Fader : MonoBehaviour
 
 
 
+	}
+
+	public void findFirstBeat(SyncAudio source)
+	{
+		source.findBeat ();
 	}
 }

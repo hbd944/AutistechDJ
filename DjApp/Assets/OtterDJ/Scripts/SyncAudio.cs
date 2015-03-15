@@ -7,6 +7,10 @@ public class SyncAudio : MonoBehaviour , AudioProcessor.AudioCallbacks
 	AudioProcessor processor;
 	public ParticleVisualizer visualizer;
 	float prevTime;
+	private int beatCounter = 0;
+	private bool findingBeat;
+	public bool ready = false;
+
 	void Start()
 	{
 		//Select the instance of AudioProcessor and pass a reference
@@ -22,7 +26,15 @@ public class SyncAudio : MonoBehaviour , AudioProcessor.AudioCallbacks
 		Debug.Log(Time.time - prevTime);
 		prevTime = Time.time;
 		visualizer.VisualizeOnBeat ();
+		if (beatCounter != 0) {
+			beatCounter--;
+		} else if (findingBeat) {
+			deck.GetComponent<AudioSource>().Pause();
+			findingBeat = false;
+			ready = true;
+		}
 	}
+
 
 	public void onSpectrum(float[] spectrum)
 	{
@@ -39,7 +51,8 @@ public class SyncAudio : MonoBehaviour , AudioProcessor.AudioCallbacks
 	
 	public void findBeat()
 	{
-		
+		beatCounter = 4;
+		findingBeat = true;
+		deck.GetComponent<AudioSource>().Play();
 	}
-	
 }
