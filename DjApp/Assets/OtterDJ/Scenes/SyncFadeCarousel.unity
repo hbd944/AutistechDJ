@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 577006511}
+      - m_Target: {fileID: 0}
         m_MethodName: RotateSongLeft
         m_Mode: 1
         m_Arguments:
@@ -1161,38 +1161,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 284581580}
---- !u!114 &577006511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11468402, guid: e911ea6e639af7544b5b5bffba73047a,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 614332283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a4aee483e1b8854cb016c0bafa55cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fader: {fileID: 1767154903}
-  clips:
-  - {fileID: 8300000, guid: 7d1abcfc9071ad649bdfe7e113b58187, type: 3}
-  - {fileID: 8300000, guid: 203deba5b10174d458fb42bf48a73a84, type: 3}
-  - {fileID: 8300000, guid: e99d4b9a17a13c54f843c2124afe8d27, type: 3}
-  - {fileID: 8300000, guid: bc45abe0c766f1448b3e17a62a5de303, type: 3}
-  - {fileID: 8300000, guid: 1f15704e5b5adde42a2d58b366978d81, type: 3}
-  - {fileID: 8300000, guid: 81e4879ee7b5d2949b7dc76145b3df7f, type: 3}
-  - {fileID: 8300000, guid: 81e4879ee7b5d2949b7dc76145b3df7f, type: 3}
-  songIndex: 0
-  buttons:
-  - {fileID: 1511832983}
-  - {fileID: 1316388001}
-  - {fileID: 868380764}
-  - {fileID: 149857519}
-  - {fileID: 118654259}
-  - {fileID: 2063360516}
-  - {fileID: 805628294}
-  farRight: {fileID: 805628295}
-  farLeft: {fileID: 1511832984}
 --- !u!4 &577006512
 Transform:
   m_ObjectHideFlags: 0
@@ -1241,7 +1209,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 577006512}
-  - 114: {fileID: 577006511}
   m_Layer: 0
   m_Name: Carousol
   m_TagString: Untagged
@@ -2129,7 +2096,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 577006511}
+      - m_Target: {fileID: 0}
         m_MethodName: RotateSongLeft
         m_Mode: 1
         m_Arguments:
