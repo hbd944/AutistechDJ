@@ -18,11 +18,11 @@ public class TouchManager : MonoBehaviour
 		{
 			Vector3 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 			
-			if(touchDeltaPosition.x < 0)
-			{
-				dj.SendMessage("LeftSwipe",touchDeltaPosition.x);
-			}
-			GetComponent<RectTransform>().Translate(new Vector3(touchDeltaPosition.x * 5, 0, 0) );
+			//if(touchDeltaPosition.x < 0)
+			//{
+			//	dj.SendMessage("LeftSwipe",touchDeltaPosition.x);
+			//}
+			GetComponent<RectTransform>().Translate(new Vector3(touchDeltaPosition.x * 2, 0, 0) );
 		}
 
 	}
