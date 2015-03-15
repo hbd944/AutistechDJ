@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.IO;
+using System;
 
 public class LockYouOut : MonoBehaviour {
 
@@ -24,10 +26,23 @@ public class LockYouOut : MonoBehaviour {
 	public string myPasscode = "123321";
 	public float timer = 0;
 
+	//public File myFile;
+
 	public List<int> myPwd = new List<int>();
 	public List<int> myHits = new List<int>();
 	// Use this for initialization
 	void Start () {
+		//StreamReader theReader = new StreamReader(
+		//myFile
+		//Debug.Log ("Hi friend");
+
+		//TextAsset mydata = (TextAsset)Resources.LoadAssetAtPath("Assets/OtterDJ/Assets/Resources/Settings/touchCombo.txt", typeof(TextAsset));
+		//Debug.Log (mydata.ToString ());
+		//Char[] holderCombo = mydata.text.ToCharArray ();
+		//Debug.Log (holderCombo.ToString ());
+		//foreach(char a in holderCombo)
+			//myPwd.Add (Convert.ToInt32( a - 48));
+
 		myPwd.Add (1);
 		myPwd.Add (2);
 		myPwd.Add (3);
