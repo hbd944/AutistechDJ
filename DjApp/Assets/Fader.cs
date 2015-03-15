@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Fader : MonoBehaviour 
 {
@@ -14,16 +15,24 @@ public class Fader : MonoBehaviour
 
 	bool fading;
 
+	bool state;
+
 	public float fadeSpeed;
+
+	public ParticleSystem pSystem;
 
 	void Start () 
 	{
-		
+		state = false;
 	}
 
 	public void Test()
 	{
-		SwitchTracks(source1,source2);
+		if(!state)
+			SwitchTracks(source1,source2);
+		else
+			SwitchTracks(source2,source1);
+		
 	}
 
 	void Update () 
@@ -48,6 +57,7 @@ public class Fader : MonoBehaviour
 				fadeFrom.volume = 0.0f;
 				fadeFrom.Stop();
 				fading = false;
+				pSystem.gravityModifier = 0.0f;
 			}
 		}
 	}
@@ -59,6 +69,8 @@ public class Fader : MonoBehaviour
 		s2.volume = 0.0f;
 
 		fading = true;
+
+		pSystem.gravityModifier = 1.0f;
 
 
 
