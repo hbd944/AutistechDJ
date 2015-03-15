@@ -16,8 +16,13 @@ public class LockYouOut : MonoBehaviour {
 	public GameObject pwdCanvas;
 	public GameObject hitsCanvas;
 
+	public GameObject timerText;
+
+	public bool timerOn = false;
+
 	public GameObject myInput;
 	public string myPasscode = "123321";
+	public float timer = 0;
 
 	public List<int> myPwd = new List<int>();
 	public List<int> myHits = new List<int>();
@@ -31,6 +36,10 @@ public class LockYouOut : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (timer > 0) {
+			timer -= Time.deltaTime;
+			timerText.GetComponent<Text> ().text = timer.ToString ();
+		}
 		string staging = "";
 		foreach (int a in myHits) {
 			staging += a + ",";
@@ -46,6 +55,20 @@ public class LockYouOut : MonoBehaviour {
 			//Application.LoadLevel("Settings");
 			pwdCanvas.SetActive(true);
 			hitsCanvas.SetActive(false);
+			//passCodeEntered();
+			if(!timerOn){
+				timerOn = true;
+				timer = 10;
+			}
+		}
+
+		if (timer < 0 && timerOn) {
+			//textHits.GetComponent<Text>().text = "";
+			myHits.Clear();
+			pwdCanvas.SetActive(false);
+			hitsCanvas.SetActive(true);
+			myInput.GetComponent<Text> ().text = "";
+			timerOn = false;
 		}
 
 		if (myInput.GetComponent<Text> ().text.Equals (myPasscode)) {
@@ -89,8 +112,13 @@ public class LockYouOut : MonoBehaviour {
 		}
 	}
 
-	public void passCodeEntered(){
-
+	public IEnumerator passCodeEntered(){
+		while (!myInput.GetComponent<Text> ().text.Equals (myPasscode)) {
+			yield return new WaitForSeconds(5);
+			pwdCanvas.SetActive(false);
+			hitsCanvas.SetActive(true);
+			myInput.GetComponent<Text> ().text = "";
+		}
 	}
 
 
