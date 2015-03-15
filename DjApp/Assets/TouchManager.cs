@@ -16,12 +16,13 @@ public class TouchManager : MonoBehaviour
 	{
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) 
 		{
-			Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+			Vector3 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 			
 			if(touchDeltaPosition.x < 0)
 			{
 				dj.SendMessage("LeftSwipe",touchDeltaPosition.x);
 			}
+			transform.position+= touchDeltaPosition;
 		}
 
 	}
