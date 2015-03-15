@@ -22,7 +22,7 @@ public class TouchManager : MonoBehaviour
 			{
 				dj.SendMessage("LeftSwipe",touchDeltaPosition.x);
 			}
-			transform.position+= touchDeltaPosition;
+			GetComponent<RectTransform>().Translate(new Vector3(touchDeltaPosition.x * 5, 0, 0) );
 		}
 
 	}
