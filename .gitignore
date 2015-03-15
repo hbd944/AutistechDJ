@@ -28,6 +28,7 @@ sysinfo.txt
 *.unityproj
 *.booproj
 *.apk
+
  
 # ============ #
 # OS generated #
@@ -42,4 +43,4 @@ ehthumbs.db
 
 DjApp/ProjectSettings/ProjectSettings.asset
 *.mp3
-.mp3.meta
+*.mp3.meta
