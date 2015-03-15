@@ -7,6 +7,8 @@ public class DJManager : MonoBehaviour
 {
 	public List<Song> songs = new List<Song>();
 
+	public Fader fader;
+
 	public List<AudioClip> clips = new List<AudioClip>();
 
 	public int songIndex;
@@ -127,10 +129,10 @@ public class DJManager : MonoBehaviour
 
 	public void SongClicked(AudioClip aC)
 	{
-		GetComponent<AudioSource>().clip = aC;
-		GetComponent<AudioSource>().Play ();
+		//GetComponent<AudioSource>().clip = aC;
+		//GetComponent<AudioSource>().Play ();
 
-
+		fader.cueSong (aC);
 	}
 
 	void Start () 
