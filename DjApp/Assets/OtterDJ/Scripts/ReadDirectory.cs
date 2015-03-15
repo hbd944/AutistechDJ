@@ -64,8 +64,8 @@ public class ReadDirectory : MonoBehaviour {
 		}*/
 
 		textObject.GetComponent<Text> ().text = SongFiles [currNum];
-		songToPlay = new WWW("https://www.youtube.com/watch?v=gcejLp72iCE");
-		sourcerino.clip = songToPlay.GetAudioClip(false, true, AudioType.MPEG);
+		songToPlay = new WWW("file://mnt/sdcard/media/" + SongFiles[currNum]);
+		sourcerino.clip = songToPlay.GetAudioClip(false, false);
 		//sourcerino.GetComponent<AudioClip>().LoadAudioData(true);
 		textObject.GetComponent<Text> ().text = sourcerino.volume.ToString();
 		sourcerino.Play();

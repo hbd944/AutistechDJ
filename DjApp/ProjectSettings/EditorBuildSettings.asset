@@ -12,6 +12,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/OtterDJ/Scenes/DirectoryTest.unity
   - enabled: 0
-    path: Assets/beatSync.unity
+    path: Assets/OtterDJ/Scenes/beatSync.unity
   - enabled: 1
     path: Assets/OtterDJ/Scenes/CarouselTestScene.unity
