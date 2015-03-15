@@ -5,9 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/FaderTest.unity
   - enabled: 0
     path: Assets/OtterDJ/Scenes/DJ.unity
   - enabled: 0
     path: Assets/OtterDJ/Scenes/DirectoryTest.unity
+  - enabled: 0
+    path: Assets/beatSync.unity
+  - enabled: 1
+    path: Assets/OtterDJ/Scenes/CarouselTestScene.unity
