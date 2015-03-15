@@ -30,8 +30,8 @@ public class TouchManager : MonoBehaviour
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved) 
 		{
 			Vector3 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-			int touchy = Input.GetTouch (0).position.x;
-			if ( (frame.transform.position.y < 20 && touchy < 20) ) ||
+			float touchy = Input.GetTouch(0).position.x;
+			if (( (frame.transform.position.y < 20 && touchy < 20) ) ||
 					  (frame.transform.position.y > -80 && touchy > -80) ){
 
 				if(touchDeltaPosition.x > 85)
