@@ -1,9 +1,19 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LockYouOut.cs">
     <Files>
       <File FileName="Assets\LockYouOut.cs" Line="22" Column="114" />
       <File FileName="Assets\OtterDJ\Scripts\ReadDirectory.cs" Line="84" Column="45" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OtterDJ\Scripts\DJManager.cs">
+    <Files>
+      <File FileName="Assets\Fader.cs" Line="5" Column="36" />
+      <File FileName="Assets\ButtonAnimator.cs" Line="156" Column="2" />
+      <File FileName="Assets\OtterDJ\Scripts\DJManager.cs" Line="47" Column="69" />
+      <File FileName="Assets\TouchManager.cs" Line="23" Column="54" />
+>>>>>>> 81671bcb7497ec363e9203b80b06a76650318768
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

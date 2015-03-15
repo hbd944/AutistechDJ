@@ -6,9 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
+    path: Assets/CarousolTest2.unity
+  - enabled: 1
+    path: Assets/OtterDJ/Scenes/CarouselTestScene.unity
+  - enabled: 0
     path: Assets/FaderTest.unity
   - enabled: 0
     path: Assets/OtterDJ/Scenes/DJ.unity
+<<<<<<< HEAD
   - enabled: 0
     path: Assets/OtterDJ/Scenes/DirectoryTest.unity
   - enabled: 0
@@ -17,3 +22,7 @@ EditorBuildSettings:
     path: Assets/OtterDJ/Scenes/CarouselTestScene.unity
   - enabled: 1
     path: Assets/OtterDJ/Scenes/LOCKMEIN.unity
+=======
+  - enabled: 0
+    path: Assets/OtterDJ/Scenes/DirectoryTest.unity
+>>>>>>> 81671bcb7497ec363e9203b80b06a76650318768
