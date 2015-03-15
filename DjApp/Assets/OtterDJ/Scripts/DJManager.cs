@@ -14,10 +14,12 @@ public class DJManager : MonoBehaviour
 	public RectTransform farRight;
 	public RectTransform farLeft;
 
-	public void orderRender(){
-		GameObject center = buttons [0];
+	public void orderRender()
+	{
+		GameObject center = buttons[0];
 
-		foreach(GameObject thisButton in buttons){
+		foreach(GameObject thisButton in buttons)
+		{
 			if (Mathf.Abs (thisButton.GetComponent<RectTransform>().localPosition.x) < Mathf.Abs (center.GetComponent<RectTransform>().localPosition.x))
 			{
 				center = thisButton;
@@ -28,17 +30,24 @@ public class DJManager : MonoBehaviour
 
 	}
 
-	public void getLeftChild(GameObject me){
+	public void getLeftChild(GameObject me)
+	{
 		int myIndex = me.GetComponent<TouchManager>().id;
 		int childIndex = myIndex - 1;
 		if (childIndex < 0)
 			childIndex = 6;
 
-	//	set myindex to parent of childinde
-			buttons[childIndex].transform.parent = me.transform;
-
-		if (Mathf.Abs (me.GetComponent<RectTransform>().localPosition.x) >= -300)
+		if (me.GetComponent<RectTransform>().localPosition.x >= -200)
 			getLeftChild (buttons[childIndex]);
+		else
+			getFinalLeftChild (buttons[childIndex]);
+
+
+	//	set myindex to parent of childinde
+		buttons[childIndex].transform.parent = me.transform;
+
+
+
 	}
 
 	public void getRightChild(GameObject me){
@@ -46,14 +55,42 @@ public class DJManager : MonoBehaviour
 		int childIndex = myIndex + 1;
 		if (childIndex > 6)
 			childIndex = 0;
+
+		if (me.GetComponent<RectTransform>().localPosition.x <= 200)
+			getRightChild (buttons[childIndex]);
+		else
+			getFinalRightChild (buttons[childIndex]);
+		
+
 		
 		//	set myindex to parent of childinde
 		buttons[childIndex].transform.parent = me.transform;
 		
-		if (Mathf.Abs (me.GetComponent<RectTransform>().localPosition.x) <= 300)
-			getRightChild (buttons[childIndex]);
+
 	}
 
+	public void getFinalLeftChild(GameObject me){
+		int myIndex = me.GetComponent<TouchManager>().id;
+		int childIndex = myIndex - 1;
+		if (childIndex < 0)
+			childIndex = 6;
+		
+		//	set myindex to parent of childinde
+		buttons[childIndex].transform.parent = me.transform;
+
+			
+	}
+
+	public void getFinalRightChild(GameObject me){
+		int myIndex = me.GetComponent<TouchManager>().id;
+		int childIndex = myIndex + 1;
+		if (childIndex > 6)
+			childIndex = 0;
+		
+		//	set myindex to parent of childinde
+		buttons[childIndex].transform.parent = me.transform;
+
+	}
 
 
 	public void MoveMeLeft(int id)
@@ -67,7 +104,7 @@ public class DJManager : MonoBehaviour
 			farRight = buttons[id-1].GetComponent<RectTransform>();
 		}
 
-		orderRender ();
+		//orderRender ();
 	}
 	public void MoveMeRight(int id)
 	{
@@ -80,7 +117,7 @@ public class DJManager : MonoBehaviour
 			farLeft = buttons[id+1].GetComponent<RectTransform>();
 		}
 
-		orderRender ();
+		//orderRender ();
 	}
 
 	void Start () 
@@ -97,6 +134,8 @@ public class DJManager : MonoBehaviour
 		{
 			buttons[i].GetComponent<TouchManager>().id = i;
 		}
+
+		//orderRender();
 	}
 	
 
