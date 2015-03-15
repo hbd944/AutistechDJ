@@ -2734,26 +2734,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songIndex: 0
-  b1: {fileID: 0}
-  b2: {fileID: 0}
-  b3: {fileID: 0}
-  b4: {fileID: 0}
-  b5: {fileID: 0}
-  image: {fileID: 0}
-  clip: {fileID: 8300000, guid: 4d7957dc43bbecc4d9281ec4baad1bc9, type: 3}
-  icon: {fileID: 0}
-  clip2: {fileID: 0}
-  icon2: {fileID: 0}
-  clip3: {fileID: 0}
-  icon3: {fileID: 0}
-  clip4: {fileID: 0}
-  icon4: {fileID: 0}
-  clip5: {fileID: 0}
-  icon5: {fileID: 0}
+  slot0: {fileID: 0}
+  slot1: {fileID: 0}
+  slot2: {fileID: 0}
+  slot3: {fileID: 0}
+  slot4: {fileID: 0}
+  slot5: {fileID: 0}
+  slot6: {fileID: 0}
   audio1: {fileID: 792072931}
-  audio2: {fileID: 753014221}
-  audio3: {fileID: 148579428}
-  audio4: {fileID: 1027231099}
 --- !u!114 &804596580
 MonoBehaviour:
   m_ObjectHideFlags: 0
