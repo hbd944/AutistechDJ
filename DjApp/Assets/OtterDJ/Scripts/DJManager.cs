@@ -23,12 +23,35 @@ public class DJManager : MonoBehaviour
 				center = thisButton;
 			}
 		}
-		int myIndex = center.GetComponent<TouchManager>().id;
+		getLeftChild (center);
+		getRightChild (center);
 
 	}
 
-	public GameObject getLeftChild(GameObject me){
-		///!!!!
+	public void getLeftChild(GameObject me){
+		int myIndex = me.GetComponent<TouchManager>().id;
+		int childIndex = myIndex - 1;
+		if (childIndex < 0)
+			childIndex = 6;
+
+	//	set myindex to parent of childinde
+			buttons[childIndex].transform.parent = me.transform;
+
+		if (Mathf.Abs (me.GetComponent<RectTransform>().localPosition.x) >= -300)
+			getLeftChild (buttons[childIndex]);
+	}
+
+	public void getRightChild(GameObject me){
+		int myIndex = me.GetComponent<TouchManager>().id;
+		int childIndex = myIndex + 1;
+		if (childIndex > 6)
+			childIndex = 0;
+		
+		//	set myindex to parent of childinde
+		buttons[childIndex].transform.parent = me.transform;
+		
+		if (Mathf.Abs (me.GetComponent<RectTransform>().localPosition.x) <= 300)
+			getRightChild (buttons[childIndex]);
 	}
 
 
@@ -43,6 +66,8 @@ public class DJManager : MonoBehaviour
 		{
 			farRight = buttons[id-1].GetComponent<RectTransform>();
 		}
+
+		orderRender ();
 	}
 	public void MoveMeRight(int id)
 	{
@@ -54,6 +79,8 @@ public class DJManager : MonoBehaviour
 		{
 			farLeft = buttons[id+1].GetComponent<RectTransform>();
 		}
+
+		orderRender ();
 	}
 
 	void Start () 
