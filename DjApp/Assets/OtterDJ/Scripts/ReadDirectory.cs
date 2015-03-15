@@ -5,7 +5,6 @@ using System.IO;
 using UnityEngine.UI;
 using System;
 using UnityEngine.Audio;
-using UnityEngine;
 
 public class ReadDirectory : MonoBehaviour {
 
@@ -23,10 +22,11 @@ public class ReadDirectory : MonoBehaviour {
 	public GameObject textObject;
 	public WWW songToPlay;
 	public AudioSource sourcerino;
+	public AudioClip cliperino;
 
 	// Use this for initialization
 	void Start () {
-		DirInfo = new DirectoryInfo("mnt/sdcard/media");
+		DirInfo = new DirectoryInfo("/mnt/sdcard/media/");
 		//DirInfo.MoveTo ("");
 		//DirInfo.MoveTo("mnt"); 
 		//DirInfo.MoveTo("sdcard");
@@ -38,13 +38,18 @@ public class ReadDirectory : MonoBehaviour {
 
 
 		FlInfo = DirInfo.GetFiles();
-		textObject.GetComponent<Text> ().text = Application.dataPath;
+		//textObject.GetComponent<Text> ().text = Application.dataPath;
 		if(FlInfo != null)
 		{
 			foreach(FileInfo file1 in FlInfo) {
-				SongFiles.Add(file1.ToString());
+					SongFiles.Add(file1.ToString());
 			}
 		}
+
+
+		//sourcerino.Play ();
+		//sourcerino.GetComponent<AudioClip>().LoadAudioData(true);
+
 	}
 	
 	// Update is called once per frame
@@ -52,7 +57,7 @@ public class ReadDirectory : MonoBehaviour {
 	
 	}
 
-	void onClick() {
+	IEnumerator onClick() {
 		// CurrDir;
 		/*if (currNum < DirInfos.Length) {
 			textObject.GetComponent<Text> ().text = DirInfos [currNum].Name;
@@ -61,47 +66,31 @@ public class ReadDirectory : MonoBehaviour {
 			currNum = 0;
 			textObject.GetComponent<Text> ().text = DirInfos [currNum].Name;
 			currNum++;
-		}*/
+		}
 
-		textObject.GetComponent<Text> ().text = SongFiles [currNum];
-		songToPlay = new WWW("file://mnt/sdcard/media/" + SongFiles[currNum]);
-		sourcerino.clip = songToPlay.GetAudioClip(false, false);
-		//sourcerino.GetComponent<AudioClip>().LoadAudioData(true);
-		textObject.GetComponent<Text> ().text = sourcerino.volume.ToString();
+		textObject.GetComponent<Text> ().text = "Playing!";
 		sourcerino.Play();
 		if(!sourcerino.isPlaying)
-			textObject.GetComponent<Text> ().text = sourcerino.clip.length.ToString();
+			textObject.GetComponent<Text> ().text = "FAILED";*/
 			
+		textObject.GetComponent<Text> ().text = SongFiles [currNum];
+		songToPlay = new WWW ("file:///" + SongFiles [currNum]);
+		cliperino = songToPlay.GetAudioClip (false, true);
+		textObject.GetComponent<Text> ().text = cliperino.loadState.ToString ();
+		while (cliperino.loadState.ToString().Equals("Unloaded")){
+			yield return new WaitForSeconds(5);
+		}
+		textObject.GetComponent<Text> ().text = cliperino.loadState.ToString ();
+		sourcerino.clip = cliperino;
 		 // Use this to iterate through all files in list
 		if (currNum < SongFiles.Count) {
-			/*textObject.GetComponent<Text> ().text = SongFiles [currNum];
-			if(!sourcerino.isPlaying)
-			{
-				songToPlay = new WWW("file:///" + SongFiles[currNum]);
-				sourcerino.clip = songToPlay.GetAudioClip(false, false);
-				sourcerino.Play();
-			}else {
-				sourcerino.Stop();
-				songToPlay = new WWW("file:///" + SongFiles[currNum]);
-				sourcerino.clip = songToPlay.GetAudioClip(false, false);
-				sourcerino.Play ();
-			}
-			currNum++;*/
-		} else {
-			/*currNum = 0;
 			textObject.GetComponent<Text> ().text = SongFiles [currNum];
-			if(!sourcerino.isPlaying)
-			{
-				songToPlay = new WWW("file:///" + SongFiles[currNum]);
-				sourcerino.clip = songToPlay.GetAudioClip(false, false);
-				sourcerino.Play();
-			}else {
-				sourcerino.Stop();
-				songToPlay = new WWW("file:///" + SongFiles[currNum]);
-				sourcerino.clip = songToPlay.GetAudioClip(false, false);
-				sourcerino.Play ();
-			}
-			currNum++;*/
+			currNum++;
+		} else {
+			currNum = 0;
+			textObject.GetComponent<Text> ().text = SongFiles [currNum];
+			currNum++;
 		}
+		sourcerino.Play();
 	}
 }
