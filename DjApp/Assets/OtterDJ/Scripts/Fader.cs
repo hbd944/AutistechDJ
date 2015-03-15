@@ -57,12 +57,15 @@ public class Fader : MonoBehaviour
 	void Update () 
 	{
 
-		if (deck2.ready) {
+		if (deck2.ready) 
+		{
 			deck2.ready=false;
 			SwitchTracks(source1,source2);
 
 
-		} else if (deck1.ready) {
+		} 
+		else if (deck1.ready) 
+		{
 			deck1.ready=false;
 			SwitchTracks(source2,source1);
 

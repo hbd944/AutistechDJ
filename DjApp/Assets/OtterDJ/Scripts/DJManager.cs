@@ -7,6 +7,8 @@ public class DJManager : MonoBehaviour
 {
 	public List<Song> songs = new List<Song>();
 
+	public List<AudioClip> clips = new List<AudioClip>();
+
 	public int songIndex;
 
 	public GameObject[] buttons;
@@ -50,7 +52,8 @@ public class DJManager : MonoBehaviour
 
 	}
 
-	public void getRightChild(GameObject me){
+	public void getRightChild(GameObject me)
+	{
 		int myIndex = me.GetComponent<TouchManager>().id;
 		int childIndex = myIndex + 1;
 		if (childIndex > 6)
@@ -69,7 +72,8 @@ public class DJManager : MonoBehaviour
 
 	}
 
-	public void getFinalLeftChild(GameObject me){
+	public void getFinalLeftChild(GameObject me)
+	{
 		int myIndex = me.GetComponent<TouchManager>().id;
 		int childIndex = myIndex - 1;
 		if (childIndex < 0)
@@ -81,7 +85,8 @@ public class DJManager : MonoBehaviour
 			
 	}
 
-	public void getFinalRightChild(GameObject me){
+	public void getFinalRightChild(GameObject me)
+	{
 		int myIndex = me.GetComponent<TouchManager>().id;
 		int childIndex = myIndex + 1;
 		if (childIndex > 6)
@@ -120,19 +125,42 @@ public class DJManager : MonoBehaviour
 		//orderRender ();
 	}
 
+	public void SongClicked(AudioClip aC)
+	{
+		GetComponent<AudioSource>().clip = aC;
+		GetComponent<AudioSource>().Play ();
+
+
+	}
+
 	void Start () 
 	{
 		Sprite[] sprs = Resources.LoadAll<Sprite>("Carousel");
-		foreach (Sprite spr in sprs) {
+
+		foreach (Sprite spr in sprs) 
+		{
 			Song s = new Song();
 			s.icon = spr;
 			songs.Add(s);
 		}
+
+		for(int i = 0; i < 5; i++)
+		{
+			songs[i].song = clips[i];
+		}
+
+		//for(int i = 0; i < songs.Count; i++)
+		//{
+		//	songs[i].song = clips[i];
+		//}
 		songIndex = 2;
 
 		for(int i = 0; i < buttons.Length; i++)
 		{
 			buttons[i].GetComponent<TouchManager>().id = i;
+
+			if(i < 6)
+				buttons[i].GetComponent<TouchManager>().clip = songs[i].song;
 		}
 
 		//orderRender();

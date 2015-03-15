@@ -7,6 +7,9 @@ public class TouchManager : MonoBehaviour
 	public DJManager dj;
 	public RectTransform frame;
 	public int id;
+	public AudioClip clip;
+
+
 
 
 	void Start () 
@@ -14,7 +17,12 @@ public class TouchManager : MonoBehaviour
 		frame = GetComponent<RectTransform> ();
 
 	}
-	
+
+
+	public void Clicked()
+	{
+		dj.SongClicked(clip);
+	}
 
 	void Update () 
 	{
@@ -23,14 +31,14 @@ public class TouchManager : MonoBehaviour
 		{
 			Vector3 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 
-			if(touchDeltaPosition.x > 25)
+			if(touchDeltaPosition.x > 85)
 			{
-				touchDeltaPosition = new Vector3(25,touchDeltaPosition.y,touchDeltaPosition.z);
+				touchDeltaPosition = new Vector3(85,touchDeltaPosition.y,touchDeltaPosition.z);
 			}
 			else
-			if(touchDeltaPosition.x < -25)
+			if(touchDeltaPosition.x < -85)
 			{
-				touchDeltaPosition = new Vector3(-25,touchDeltaPosition.y,touchDeltaPosition.z);
+				touchDeltaPosition = new Vector3(-85,touchDeltaPosition.y,touchDeltaPosition.z);
 			}
 			
 			//if(touchDeltaPosition.x < 0)
