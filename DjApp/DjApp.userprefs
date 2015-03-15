@@ -1,8 +1,18 @@
 ﻿<Properties>
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\asset1.txt">
+    <Files>
+      <File FileName="DjApp.sln" Line="1" Column="1" />
+      <File FileName="Assets\asset1.txt" Line="1" Column="1" />
+      <File FileName="Assets\SoundButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\DJManager.cs" Line="19" Column="2" />
+=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\OtterDJ\Scripts\ReadDirectory.cs">
     <Files>
       <File FileName="Assets\OtterDJ\Scripts\ReadDirectory.cs" Line="23" Column="49" />
+>>>>>>> 9ecf8a11b35b70cb26a48072724051d102619c38
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
