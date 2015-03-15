@@ -130,7 +130,7 @@ public class DJManager : MonoBehaviour
 		//GetComponent<AudioSource>().clip = aC;
 		//GetComponent<AudioSource>().Play ();
 
-		transform.parent.GetComponent<Fader>().cueSong (aC);
+		fader.cueSong (aC);
 	}
 
 	void Start () 
