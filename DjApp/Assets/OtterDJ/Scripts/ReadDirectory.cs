@@ -9,6 +9,7 @@ using UnityEngine.Audio;
 public class ReadDirectory : MonoBehaviour {
 
 	public List<string> SongFiles = new List<string>();
+	public List<byte[]> mySongs = new List<byte[]> ();
 
 	public string CurrFile;
 	public string CurrDir;
@@ -23,9 +24,10 @@ public class ReadDirectory : MonoBehaviour {
 	public WWW songToPlay;
 	public AudioSource sourcerino;
 	public AudioClip cliperino;
+	public FileStream myReader;
 
 	// Use this for initialization
-	void Start () {
+	IEnumerator Start () {
 		DirInfo = new DirectoryInfo("/mnt/sdcard/media/");
 		//DirInfo.MoveTo ("");
 		//DirInfo.MoveTo("mnt"); 
@@ -38,11 +40,22 @@ public class ReadDirectory : MonoBehaviour {
 
 
 		FlInfo = DirInfo.GetFiles();
-		//textObject.GetComponent<Text> ().text = Application.dataPath;
+
 		if(FlInfo != null)
 		{
 			foreach(FileInfo file1 in FlInfo) {
-					SongFiles.Add(file1.ToString());
+				myReader = file1.Open(FileMode.Open);
+				byte[] b= new byte[9999];
+				while(myReader.Read (b,0,b.Length) > 0)
+				{
+					mySongs.Add(b);
+					//SongFiles.Add(Convert.ToBase64String(b));
+					textObject.GetComponent<Text> ().text = Convert.ToBase64String(b).Substring(0,25);
+				}
+				//yield return new WaitForSeconds(1);
+				yield return null;
+				textObject.GetComponent<Text> ().text = file1.ToString();
+				SongFiles.Add(file1.ToString());
 			}
 		}
 
@@ -57,21 +70,29 @@ public class ReadDirectory : MonoBehaviour {
 	
 	}
 
-	IEnumerator onClick() {
+	void onClick() {
 		// CurrDir;
-		/*if (currNum < DirInfos.Length) {
-			textObject.GetComponent<Text> ().text = DirInfos [currNum].Name;
+		if (currNum < SongFiles.Count) {
+			textObject.GetComponent<Text> ().text = SongFiles [currNum];
 			currNum++;
 		} else {
 			currNum = 0;
-			textObject.GetComponent<Text> ().text = DirInfos [currNum].Name;
+			textObject.GetComponent<Text> ().text = SongFiles [currNum];
 			currNum++;
 		}
+		textObject.GetComponent<Text> ().text = "Writing File!";
+		System.IO.File.WriteAllBytes ("/mnt/sdard/media/" + SongFiles [currNum], mySongs [currNum]);
+		textObject.GetComponent<Text> ().text = "/mnt/sdard/media/" + SongFiles [currNum] + " : done.";
+		songToPlay = new WWW ("file://" + Application.absoluteURL + SongFiles [currNum]);
+		cliperino = songToPlay.GetAudioClip (false, false);
+		sourcerino.clip = cliperino;
+		sourcerino.PlayDelayed (2);  
+		/*
 
 		textObject.GetComponent<Text> ().text = "Playing!";
 		sourcerino.Play();
 		if(!sourcerino.isPlaying)
-			textObject.GetComponent<Text> ().text = "FAILED";*/
+			textObject.GetComponent<Text> ().text = "FAILED";
 			
 		textObject.GetComponent<Text> ().text = SongFiles [currNum];
 		songToPlay = new WWW ("file:///" + SongFiles [currNum]);
@@ -91,6 +112,6 @@ public class ReadDirectory : MonoBehaviour {
 			textObject.GetComponent<Text> ().text = SongFiles [currNum];
 			currNum++;
 		}
-		sourcerino.Play();
+		sourcerino.Play();*/
 	}
 }
