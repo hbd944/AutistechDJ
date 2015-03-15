@@ -9,157 +9,51 @@ public class DJManager : MonoBehaviour
 
 	public int songIndex;
 
-	public GameObject slot0;
-	public GameObject slot1;
-	public GameObject slot2;
-	public GameObject slot3;
-	public GameObject slot4;
-	public GameObject slot5;
-	public GameObject slot6;
-
-	public AudioSource audio1;
-
-	public bool triggered;
-
-	public float cooldown;
-
 	public GameObject[] buttons;
 
+	public RectTransform farRight;
+	public RectTransform farLeft;
 
-	public void PlaySong(AudioClip s)
-	{
+	public void orderRender(){
+		GameObject center = buttons [0];
 
-	}
-
-
-
-	public void LeftSwipe(float sw)
-	{
-		float farRight = 485;
-		foreach(GameObject go in buttons)
-		{
-			go.GetComponent<RectTransform>().Translate (new Vector3(sw*3,0,0));
-
-			if(go.GetComponent<RectTransform>().localPosition.x+150 > 485)
+		foreach(GameObject thisButton in buttons){
+			if (Mathf.Abs (thisButton.GetComponent<RectTransform>().localPosition.x) < Mathf.Abs (center.GetComponent<RectTransform>().localPosition.x))
 			{
-				if(go.GetComponent<RectTransform>().localPosition.x > farRight)
-				{
-					farRight = go.GetComponent<RectTransform>().localPosition.x+150;
-				}
-
-			}
-			if(go.GetComponent<RectTransform>().localPosition.x+150 < -480)
-			{
-				if(farRight > 485)
-				{
-					go.GetComponent<RectTransform>().localPosition = new Vector3(farRight,go.GetComponent<RectTransform>().localPosition.y,go.GetComponent<RectTransform>().localPosition.z);
-			
-				
-				}
-				else
-				{
-					go.GetComponent<RectTransform>().localPosition = new Vector3(485,go.GetComponent<RectTransform>().localPosition.y,go.GetComponent<RectTransform>().localPosition.z);
-
-				}
+				center = thisButton;
 			}
 		}
-		//if(cooldown <= 0)
-		//{
-			//RotateLeft();
+		int myIndex = center.GetComponent<TouchManager>().id;
 
-		///	//cooldown = 2.0f;
-		//}
 	}
 
-	public void RightSwipe(float sw)
+	public GameObject getLeftChild(GameObject me){
+		///!!!!
+	}
+
+
+
+	public void MoveMeLeft(int id)
 	{
-		float farRight = 485;
-		foreach(GameObject go in buttons)
+		if(id == 0)
 		{
-			go.GetComponent<RectTransform>().Translate (new Vector3(sw,0,0));
-			
-			if(go.GetComponent<RectTransform>().localPosition.x > 485)
-			{
-				if(go.GetComponent<RectTransform>().localPosition.x > farRight)
-				{
-					farRight = go.GetComponent<RectTransform>().localPosition.x;
-				}
-				
-			}
-			if(go.GetComponent<RectTransform>().localPosition.x < -480)
-			{
-				if(farRight > 485)
-				{
-					go.GetComponent<RectTransform>().localPosition = new Vector3(farRight+150,go.GetComponent<RectTransform>().localPosition.y,go.GetComponent<RectTransform>().localPosition.z);
-					
-					
-				}
-				else
-				{
-					go.GetComponent<RectTransform>().localPosition = new Vector3(485,go.GetComponent<RectTransform>().localPosition.y,go.GetComponent<RectTransform>().localPosition.z);
-					
-				}
-			}
-		}
-		//if(cooldown <= 0)
-		//{
-		//RotateLeft();
-		
-		///	//cooldown = 2.0f;
-		//}
-	}
-
-	public void RotateLeft()		
-	{
-	//	slot0.GetComponent<ButtonAnimator>().MoveSixToOne ();
-	//	slot1.GetComponent<ButtonAnimator>().MoveTwoToThree ();
-	//	slot2.GetComponent<ButtonAnimator>().MoveTwoToThree();
-	//	slot3.GetComponent<ButtonAnimator>().MoveTwoToThree();
-	//	slot1.GetComponent<RectTransform>().position = Vector3.zero;
-
-		slot0.SendMessage ("MoveOneToTwo");
-		slot1.SendMessage ("MoveTwoToThree");
-		slot2.SendMessage ("MoveThreeToFour");
-		slot3.SendMessage ("MoveFourToFive");
-		slot4.SendMessage ("MoveFiveToSix");
-		slot5.SendMessage ("MoveSixToOne");
-
-		GameObject tmp;
-
-		tmp = slot0;
-
-		slot0 = slot1;
-		slot1 = slot2;
-		slot2 = slot3;
-		slot4 = slot5;
-		slot5 = slot6;
-		slot6 = tmp;
-	}
-
-	public void RotateSongLeft()
-	{
-		if(songIndex < 1)
-		{
-			songIndex = songs.Count-1;
-
+			farRight = buttons[6].GetComponent<RectTransform>();
 		}
 		else
 		{
-			songIndex--;
+			farRight = buttons[id-1].GetComponent<RectTransform>();
 		}
-
-		slot3.GetComponent<Image>().sprite = songs[songIndex].icon;
 	}
-	public void RotateSongRight()
+	public void MoveMeRight(int id)
 	{
-		if (songIndex > songs.Count - 2) {
-			songIndex = 0;
-			
-		} else {
-			songIndex++;
+		if(id == 6)
+		{
+			farLeft = buttons[0].GetComponent<RectTransform>();
 		}
-		
-		slot3.GetComponent<Image> ().sprite = songs [songIndex].icon;
+		else
+		{
+			farLeft = buttons[id+1].GetComponent<RectTransform>();
+		}
 	}
 
 	void Start () 
@@ -170,21 +64,17 @@ public class DJManager : MonoBehaviour
 			s.icon = spr;
 			songs.Add(s);
 		}
-
 		songIndex = 2;
 
-
+		for(int i = 0; i < buttons.Length; i++)
+		{
+			buttons[i].GetComponent<TouchManager>().id = i;
+		}
 	}
 	
 
 	void Update () 
 	{
-		if(cooldown > 0)
-			cooldown-=Time.deltaTime;
 
-		if(Input.GetMouseButton (0))
-		{
-			//LeftSwipe();
-		}
 	}
 }
