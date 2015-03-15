@@ -51,7 +51,7 @@ public class LockYouOut : MonoBehaviour {
 		}
 		textPwd.GetComponent<Text>().text = staging;
 
-		if(textHits.GetComponent<Text>().text.Equals(textPwd.GetComponent<Text>().text)){
+		if(textHits.GetComponent<Text>().text.Equals(textPwd.GetComponent<Text>().text) && !timerOn){
 			//Application.LoadLevel("Settings");
 			pwdCanvas.SetActive(true);
 			hitsCanvas.SetActive(false);
